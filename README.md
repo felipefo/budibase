@@ -10,6 +10,6 @@ Este tutorial descreve o processo para instalar o budibase com uma imagem única
 
 # Rodando o arquivo docker-compose
 ## Baixando o código 
-  Baixe os  seguintes arquivos
-  (Docker-compose)[https://raw.githubusercontent.com/felipefo/budibase/main/docker-compose.yaml]
+  Baixe os  seguintes arquivos:
+  [Docker-compose](https://raw.githubusercontent.com/felipefo/budibase/main/docker-compose.yaml)
   
