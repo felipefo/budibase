@@ -18,10 +18,10 @@ Este tutorial descreve o processo para instalar o budibase com uma imagem única
   1. Coloque os arquivos dentro de uma pasta
   2. Rode o comando:
      ''' docker-compose up -d ''' 
-  Este comando inicia as imagens do docker iniciando  o budibase, o mysql e o phpmyadmin
+     Este comando inicia as imagens do docker iniciando  o budibase, o mysql e o phpmyadmin
   3. Acesse por meio do navegador os seguintes links:
-     [http://localhost:10000](http://localhost:10000)
-     [http://localhost:8081](http://localhost:8081)
+     1.  [http://localhost:10000](http://localhost:10000)
+     2. [http://localhost:8081](http://localhost:8081)
      
 
 
