@@ -1,2 +1,3 @@
-# budibase
-Repositório com informações iniciais sobre o budibase. 
+# Processo de instalação do budibase com mysql e phpmyadmin 
+
+ ## Baixe o repositorio
