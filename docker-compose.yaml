@@ -1,0 +1,40 @@
+version: '3'
+services:
+  budibase:
+    container_name: budibase_leve
+    image: budibase/budibase:latest
+    ports:
+      - "10000:80"
+    volumes:
+      - /local/path/data:/data
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container_leve
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      
+      
+      
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin-container_leve
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
