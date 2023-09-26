@@ -6,7 +6,7 @@ services:
     ports:
       - "10000:80"
     volumes:
-      - /local/path/data:/data
+      - couchdb3_data:/local/path/data:/data
     restart: unless-stopped
 
   mysql:
@@ -38,3 +38,4 @@ services:
 
 volumes:
   mysql-data:
+  couchdb3_data:
