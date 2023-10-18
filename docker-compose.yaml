@@ -1,10 +1,18 @@
 version: '3'
 services:
+  metabase:
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
   budibase:
     container_name: budibase_leve
     image: budibase/budibase:latest
     ports:
       - "10000:80"
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
     volumes:
       - couchdb3_data:/local/path/data
     restart: unless-stopped
@@ -21,9 +29,8 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
-      
-      
-      
+      - ./inventario.sql:/docker-entrypoint-initdb.d/init.sql
+         
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin-container_leve
@@ -39,3 +46,7 @@ services:
 volumes:
   mysql-data:
   couchdb3_data:
+
+networks: 
+  default:
+    driver: bridge  
